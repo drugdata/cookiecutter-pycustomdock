@@ -3,9 +3,9 @@
     "author_email": "churas@gmail.com",
   
     "program_name": "custom_celpp_contestant",
-    "lig_prep_classname": "MyCustomLigPrep",
-    "prot_prep_classname": "MyCustomProtPrep",
-    "dock_classname": "MyCustomDock",
+    "lig_prep_class_name": "MyCustomLigPrep",
+    "prot_prep_class_name": "MyCustomProtPrep",
+    "dock_class_name": "MyCustomDock",
     "package_name": "cookiecutter-custom-celpp-contestant",
     "package_version": "0.1.0",
     "package_description": "Cookie cutter template to create custom python prep and docking applications for D3R Celpp. Based off cookiecutter-pypackage-minimal by Louis Taylor",

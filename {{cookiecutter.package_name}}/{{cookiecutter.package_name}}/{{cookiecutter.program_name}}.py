@@ -60,6 +60,7 @@ if ("__main__") == (__name__):
     parser.add_argument("-s", "--sciprepdir", metavar="PATH", help = "PATH where we can find the scientific protein and lig prep output")
     parser.add_argument("-o", "--outdir", metavar = "PATH", help = "PATH where we will put the docking output")
     parser.add_argument("-u", "--update", action = "store_true",  help = "Update the docking result", default = False)
+    # Leave option for custom logging config here
     logger = logging.getLogger()
     logging.basicConfig( format  = '%(asctime)s: %(message)s', datefmt = '%m/%d/%y %I:%M:%S', filename = 'final.log', filemode = 'w', level   = logging.INFO )
     opt = parser.parse_args()

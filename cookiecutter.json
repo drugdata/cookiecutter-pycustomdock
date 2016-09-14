@@ -1,0 +1,15 @@
+{
+    "author_name": "Christopher Churas",
+    "author_email": "churas@gmail.com",
+  
+    "program_name": "mycustomdock",
+    "dock_classname": "MyCustomDock",
+    "package_name": "cookiecutter-pycustomdock",
+    "package_version": "0.1.0",
+    "package_description": "Cookie cutter template to create custom python docking applications for D3R Celpp. Based of cookiecutter-pypackage-minimal by Louis Taylor",
+    "package_url": "https://github.com/drugdata/cookiecutter-pycustomdock",
+    
+    "readme_pypi_badge": true,
+    "readme_travis_badge": true,
+    "readme_travis_url": "https://travis-ci.org/cookiecutter/cookiecutter-pycustomdock"
+}

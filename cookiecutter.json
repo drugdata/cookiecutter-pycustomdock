@@ -2,7 +2,7 @@
     "author_name": "Christopher Churas",
     "author_email": "churas@gmail.com",
   
-    "program_name": "custom_celpp_contestant,
+    "program_name": "custom_celpp_contestant",
     "lig_prep_classname": "MyCustomLigPrep",
     "prot_prep_classname": "MyCustomProtPrep",
     "dock_classname": "MyCustomDock",

@@ -36,7 +36,7 @@ if ("__main__") == (__name__):
     log_file_path = os.path.join(abs_running_dir, 'final.log')
     log_file_dest = os.path.join(os.path.abspath(prep_result_path), 'final.log')
 
-    prot_prepper = {{cookiecutter.protein_prep_class_name}}()
+    prot_prepper = {{cookiecutter.prot_prep_class_name}}()
     prot_prepper.proteinprep(challenge_data_path, pdb_location, prep_result_path)
 
     #move the final log file to the result dir

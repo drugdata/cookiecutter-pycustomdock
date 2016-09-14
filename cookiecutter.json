@@ -2,11 +2,13 @@
     "author_name": "Christopher Churas",
     "author_email": "churas@gmail.com",
   
-    "program_name": "mycustomdock",
+    "program_name": "custom_celpp_contestant,
+    "lig_prep_classname": "MyCustomLigPrep",
+    "prot_prep_classname": "MyCustomProtPrep",
     "dock_classname": "MyCustomDock",
-    "package_name": "cookiecutter-pycustomdock",
+    "package_name": "cookiecutter-custom-celpp-contestant",
     "package_version": "0.1.0",
-    "package_description": "Cookie cutter template to create custom python docking applications for D3R Celpp. Based of cookiecutter-pypackage-minimal by Louis Taylor",
+    "package_description": "Cookie cutter template to create custom python prep and docking applications for D3R Celpp. Based off cookiecutter-pypackage-minimal by Louis Taylor",
     "package_url": "https://github.com/drugdata/cookiecutter-pycustomdock",
     
     "readme_pypi_badge": true,

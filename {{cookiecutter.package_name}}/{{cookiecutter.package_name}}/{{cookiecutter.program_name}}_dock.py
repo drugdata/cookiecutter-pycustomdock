@@ -5,7 +5,7 @@ __author__ = '{{cookiecutter.author_email}}'
 
 from d3r.celppade.customdock import Dock
 
-class {{cookiecutter.dock_classname}}(Dock):
+class {{cookiecutter.dock_class_name}}(Dock):
     """Abstract class defining methods for a custom docking solution
     for CELPP
     """
@@ -20,7 +20,7 @@ class {{cookiecutter.dock_classname}}(Dock):
         :returns: This implementation merely returns the value of
         `sci_prepped_lig` in a list
         """
-        return super({{cookiecutter.dock_classname}},
+        return super({{cookiecutter.dock_class_name}},
                      self).lig_technical_prep(sci_prepped_lig)
 
     def receptor_technical_prep(self, sci_prepped_receptor, pocket_center):
@@ -36,7 +36,7 @@ class {{cookiecutter.dock_classname}}(Dock):
         # box file (for the docking) and the original scientifically
         # prepped ligand pdb, as that's the easiest way to return the
         # final receptor conformation.
-        return super({{cookiecutter.dock_classname}},
+        return super({{cookiecutter.dock_class_name}},
                      self).receptor_technical_prep(sci_prepped_receptor, pocket_center)
 
     def dock(self, tech_prepped_lig_list, tech_prepped_receptor_list, output_receptor_pdb, output_lig_mol):
@@ -48,7 +48,7 @@ class {{cookiecutter.dock_classname}}(Dock):
         # specified in the output_ligand_mol argument.
         :returns: Always returns False
         """
-        return super({{cookiecutter.dock_classname}},
+        return super({{cookiecutter.dock_class_name}},
                      self).dock(tech_prepped_lig_list,
                                 tech_prepped_receptor_list,
                                 output_receptor_pdb, output_lig_mol)
@@ -57,21 +57,24 @@ class {{cookiecutter.dock_classname}}(Dock):
 if ("__main__") == (__name__):
     from argparse import ArgumentParser
     parser = ArgumentParser()
-    parser.add_argument("-s", "--sciprepdir", metavar="PATH", help = "PATH where we can find the scientific protein and lig prep output")
+    parser.add_argument("-l", "--ligsciprepdir", metavar="PATH", help = "PATH where we can find the scientific ligand prep output")
+    parser.add_argument("-p", "--protsciprepdir", metavar="PATH", help = "PATH where we can find the scientific protein prep output")
     parser.add_argument("-o", "--outdir", metavar = "PATH", help = "PATH where we will put the docking output")
-    parser.add_argument("-u", "--update", action = "store_true",  help = "Update the docking result", default = False)
     # Leave option for custom logging config here
     logger = logging.getLogger()
     logging.basicConfig( format  = '%(asctime)s: %(message)s', datefmt = '%m/%d/%y %I:%M:%S', filename = 'final.log', filemode = 'w', level   = logging.INFO )
     opt = parser.parse_args()
-    sci_prep_dir = opt.sciprepdir
+    lig_sci_prep_dir = opt.ligsciprepdir
+    prot_sci_prep_dir = opt.protsciprepdir
     dock_dir = opt.outdir
     update = opt.update
     #running under this dir
     abs_running_dir = os.getcwd()
     log_file_path = os.path.join(abs_running_dir, 'final.log')
     log_file_dest = os.path.join(os.path.abspath(dock_dir), 'final.log')
-    docker = {{cookiecutter.dock_classname}}()
-    docker.run_dock(sci_prep_dir, dock_dir, update = update)
+    docker = {{cookiecutter.dock_class_name}}()
+    docker.run_dock(prot_sci_prep_dir,
+                    lig_sci_prep_dir,
+                    dock_dir)
     #move the final log file to the result dir
     commands.getoutput("mv %s %s"%(log_file_path, log_file_dest))

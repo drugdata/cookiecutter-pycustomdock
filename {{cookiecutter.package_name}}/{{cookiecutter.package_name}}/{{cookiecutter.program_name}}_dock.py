@@ -69,7 +69,6 @@ if ("__main__") == (__name__):
     lig_sci_prep_dir = opt.ligsciprepdir
     prot_sci_prep_dir = opt.protsciprepdir
     dock_dir = opt.outdir
-    update = opt.update
     #running under this dir
     abs_running_dir = os.getcwd()
     log_file_path = os.path.join(abs_running_dir, 'final.log')

@@ -15,7 +15,7 @@ class {{cookiecutter.lig_prep_class_name}}(LigandPrep):
         `sci_prepped_lig` in a list
         """
         return super({{cookiecutter.lig_prep_class_name}},
-                     self).lig_scientific_prep(sci_prepped_lig)
+                     self).ligand_scientific_prep(lig_smi_file, out_lig_file, info_dic=info_dic)
 
 
 

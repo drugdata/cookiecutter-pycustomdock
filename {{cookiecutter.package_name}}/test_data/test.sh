@@ -9,7 +9,7 @@ rm -r 6-evaluate_docking_results
 
 
 mkdir 1-get_challenge_data
-getchallengedata.py --unpackdir 1-get_challenge_data --localdata dataset_weekXX_XXXX.tar.gz 
+getchallengedata.py --unpackdir 1-get_challenge_data --localdata celpp_weekXX_XXXX.tar.gz 
 
 mkdir 2-protein_prep
 python ../{{cookiecutter.package_name}}/{{cookiecutter.program_name}}_protein_prep.py --challengedata 1-get_challenge_data --prepdir 2-protein_prep
@@ -24,5 +24,5 @@ python ../{{cookiecutter.package_name}}/{{cookiecutter.program_name}}_dock.py --
 mkdir 5-pack_docking_results
 packdockingresults.py --dockdir 4-docking --packdir 5-pack_docking_results
 
-#mkdir 6-evaluate_docking_results
+mkdir 6-evaluate_docking_results
 evaluate.py --dockdir 5-pack_docking_results --outdir 6-evaluate_docking_results --pdbdb mini_pdb

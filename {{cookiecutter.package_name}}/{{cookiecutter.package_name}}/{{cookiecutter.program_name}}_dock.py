@@ -9,6 +9,8 @@ class {{cookiecutter.dock_class_name}}(Dock):
     """Abstract class defining methods for a custom docking solution
     for CELPP
     """
+    Dock.SCI_PREPPED_LIG_SUFFIX = '_prepared.smi'
+    Dock.SCI_PREPPED_PROT_SUFFIX = '_prepared.pdb'
 
 
     def lig_technical_prep(self, sci_prepped_lig):

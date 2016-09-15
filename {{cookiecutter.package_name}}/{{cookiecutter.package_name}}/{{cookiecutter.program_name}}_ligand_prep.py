@@ -3,6 +3,8 @@
 __author__ = '{{cookiecutter.author_email}}'
 
 from d3r.celppade.custom_ligand_prep import LigandPrep
+import os
+import logging 
 
 class {{cookiecutter.lig_prep_class_name}}(LigandPrep):
     """Abstract class defining methods for a custom ligand docking solution

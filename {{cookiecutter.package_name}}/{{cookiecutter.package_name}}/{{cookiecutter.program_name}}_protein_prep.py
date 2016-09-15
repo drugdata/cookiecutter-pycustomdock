@@ -3,6 +3,7 @@
 
 __author__ = '{{cookiecutter.author_email}}'
 import logging
+import os
 
 from d3r.celppade.custom_protein_prep import ProteinPrep
 

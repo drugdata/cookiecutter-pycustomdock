@@ -40,7 +40,7 @@ if ("__main__") == (__name__):
     log_file_dest = os.path.join(os.path.abspath(prep_result_path), 'final.log')
 
     prot_prepper = {{cookiecutter.prot_prep_class_name}}()
-    prot_prepper.prepare_protein(challenge_data_path, pdb_location, prep_result_path)
+    prot_prepper.run_scientific_protein_prep(challenge_data_path, pdb_location, prep_result_path)
 
     #move the final log file to the result dir
     shutil.move(log_file_path, log_file_dest)

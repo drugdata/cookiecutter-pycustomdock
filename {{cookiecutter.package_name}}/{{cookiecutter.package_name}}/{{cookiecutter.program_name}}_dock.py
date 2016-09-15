@@ -3,7 +3,7 @@
 __author__ = '{{cookiecutter.author_email}}'
 
 
-from d3r.celppade.customdock import Dock
+from d3r.celppade.custom_dock import Dock
 
 class {{cookiecutter.dock_class_name}}(Dock):
     """Abstract class defining methods for a custom docking solution

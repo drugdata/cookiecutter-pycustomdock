@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 
-__author__ = '{{cookiecutter.author_email}}'
 
+__author__ = '{{cookiecutter.author_email}}'
+import logging
 
 from d3r.celppade.custom_protein_prep import ProteinPrep
 

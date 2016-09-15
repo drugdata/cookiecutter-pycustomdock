@@ -9,7 +9,7 @@ class {{cookiecutter.lig_prep_class_name}}(LigandPrep):
     """Abstract class defining methods for a custom ligand docking solution
     for CELPP
     """
-  def ligand_scientific_prep(self, lig_smi_file, out_lig_file, info_dic={}):
+    def ligand_scientific_prep(self, lig_smi_file, out_lig_file, info_dic={}):
         """Ligand scientific preparation
         :param sci_prepped_lig: Scientifically prepared ligand file
         :returns: This implementation merely returns the value of

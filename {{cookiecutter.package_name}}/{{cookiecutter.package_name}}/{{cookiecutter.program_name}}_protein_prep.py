@@ -2,8 +2,6 @@
 
 
 __author__ = '{{cookiecutter.author_email}}'
-import logging
-import os
 
 from d3r.celppade.custom_protein_prep import ProteinPrep
 
@@ -21,6 +19,9 @@ class {{cookiecutter.prot_prep_class_name}}(ProteinPrep):
 
     
 if ("__main__") == (__name__):
+    import logging
+    import os
+    import shutil
     from argparse import ArgumentParser
     parser = ArgumentParser()
     parser.add_argument("-p", "--pdbdb", metavar = "PATH", help = "PDB DATABANK which we will dock into")
@@ -39,7 +40,7 @@ if ("__main__") == (__name__):
     log_file_dest = os.path.join(os.path.abspath(prep_result_path), 'final.log')
 
     prot_prepper = {{cookiecutter.prot_prep_class_name}}()
-    prot_prepper.proteinprep(challenge_data_path, pdb_location, prep_result_path)
+    prot_prepper.prepare_protein(challenge_data_path, pdb_location, prep_result_path)
 
     #move the final log file to the result dir
-    commands.getoutput("mv %s %s"%(log_file_path, prep_result_path))
+    shutil.move(log_file_path, log_file_dest)

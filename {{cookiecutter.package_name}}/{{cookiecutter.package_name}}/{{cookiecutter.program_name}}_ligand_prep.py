@@ -3,8 +3,6 @@
 __author__ = '{{cookiecutter.author_email}}'
 
 from d3r.celppade.custom_ligand_prep import LigandPrep
-import os
-import logging 
 
 class {{cookiecutter.lig_prep_class_name}}(LigandPrep):
     """Abstract class defining methods for a custom ligand docking solution
@@ -27,6 +25,9 @@ class {{cookiecutter.lig_prep_class_name}}(LigandPrep):
 
 if ("__main__") == (__name__):
     from argparse import ArgumentParser
+    import os
+    import logging 
+    import shutil
     parser = ArgumentParser()
     parser.add_argument("-p", "--pdbdb", metavar = "PATH", help = "PDB DATABANK which we will dock into")
     parser.add_argument("-c", "--challengedata", metavar="PATH", help = "PATH to the unpacked challenge data package")
@@ -47,5 +48,5 @@ if ("__main__") == (__name__):
     lig_prepper.run_scientific_ligand_prep(challenge_data_path, pdb_location, prep_result_path)
 
     #move the final log file to the result dir
-    commands.getoutput("mv %s %s"%(log_file_path, prep_result_path))
+    shutil.move(log_file_path, log_file_dest)
 

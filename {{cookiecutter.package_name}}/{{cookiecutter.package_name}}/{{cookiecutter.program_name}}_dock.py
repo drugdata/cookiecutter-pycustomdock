@@ -4,8 +4,6 @@ __author__ = '{{cookiecutter.author_email}}'
 
 
 from d3r.celppade.custom_dock import Dock
-import os
-import logging
 
 class {{cookiecutter.dock_class_name}}(Dock):
     """Abstract class defining methods for a custom docking solution
@@ -57,6 +55,9 @@ class {{cookiecutter.dock_class_name}}(Dock):
 
 
 if ("__main__") == (__name__):
+    import os
+    import logging
+    import shutil
     from argparse import ArgumentParser
     parser = ArgumentParser()
     parser.add_argument("-l", "--ligsciprepdir", metavar="PATH", help = "PATH where we can find the scientific ligand prep output")
@@ -78,4 +79,4 @@ if ("__main__") == (__name__):
                     lig_sci_prep_dir,
                     dock_dir)
     #move the final log file to the result dir
-    commands.getoutput("mv %s %s"%(log_file_path, log_file_dest))
+    shutil.move(log_file_path, log_file_dest)

@@ -3,7 +3,7 @@ rm -r 1-get_challenge_data
 rm -r 2-protein_prep
 rm -r 3-ligand_prep
 rm -r 4-docking
-rm -r 5-push_docking_results
+rm -r 5-pack_docking_results
 rm -r 6-evaluate_docking_results
 
 
@@ -21,7 +21,7 @@ python ../{{cookiecutter.package_name}}/{{cookiecutter.program_name}}_ligand_pre
 mkdir 4-docking
 python ../{{cookiecutter.package_name}}/{{cookiecutter.program_name}}_dock.py --protsciprepdir 2-protein_prep --ligsciprepdir 3-ligand_prep --outdir  4-docking
 
-mkdir 5-push_docking_results
+mkdir 5-pack_docking_results
 packdockingresults.py --dockdir 4-docking --packdir 5-pack_docking_results
 
 #mkdir 6-evaluate_docking_results

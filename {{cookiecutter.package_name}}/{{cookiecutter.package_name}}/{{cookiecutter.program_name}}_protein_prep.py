@@ -10,7 +10,7 @@ class {{cookiecutter.prot_prep_class_name}}(ProteinPrep):
     """Abstract class defining methods for a custom docking solution
     for CELPP
     """
-    
+    ProteinPrep.OUTPUT_PROT_SUFFIX = '.pdb'
     def prepare_protein(self, protein_file, prepared_protein_file, info_dic={}):
         
         return super({{cookiecutter.prot_prep_class_name}},self).prepare_protein(protein_file, prepared_protein_file, info_dic=info_dic)

@@ -1,7 +1,7 @@
 cookiecutter-pycustomdock
 ==============================
 
-A [cookiecutter](https://github.com/audreyr/cookiecutter) template to create
+cookiecutter-pycstomdock is a [cookiecutter](https://github.com/audreyr/cookiecutter) template to create
 Python packages to perform custom docking for Drug Design Data Resource (D3R)
 CelppRunner.
 

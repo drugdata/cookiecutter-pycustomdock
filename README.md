@@ -16,4 +16,12 @@ Usage
     cookiecutter https://github.com/drugdata/cookiecutter-pycustomdock.git
 
 
+Quick and dirty example
+-----------------------
+
+    pip install cookiecutter
+    cookiecutter --no-input https://github.com/drugdata/cookiecutter-pycustomdock.git
+    cd cookiecutter-custom-celpp-contestant
+    
+
 

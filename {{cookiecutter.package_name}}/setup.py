@@ -13,16 +13,15 @@ setuptools.setup(
 
     packages=setuptools.find_packages(),
 
-    install_requires=[],
+    install_requires=["d3r"],
 
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 2',
+        'Programming Language :: Python :: 2.6',
         'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.4',
-        'Programming Language :: Python :: 3.5',
     ],
-     scripts = ['{{ cookiecutter.package_name }}/{{ cookiecutter.program_name }}.py']
+     scripts = ['{{ cookiecutter.package_name }}/{{ cookiecutter.program_name }}_dock.py',
+                '{{ cookiecutter.package_name }}/{{ cookiecutter.program_name }}_ligand_prep.py', 
+                '{{ cookiecutter.package_name }}/{{ cookiecutter.program_name }}_protein_prep.py']
 )

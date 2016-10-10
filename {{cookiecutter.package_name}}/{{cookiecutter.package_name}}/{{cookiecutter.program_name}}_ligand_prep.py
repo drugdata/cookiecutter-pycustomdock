@@ -9,14 +9,14 @@ class {{cookiecutter.lig_prep_class_name}}(LigandPrep):
     for CELPP
     """
     LigandPrep.OUTPUT_LIG_SUFFIX = '.smi'
-    def ligand_scientific_prep(self, lig_smi_file, out_lig_file, info_dic={}):
+    def ligand_scientific_prep(self, lig_smi_file, out_lig_file, targ_info_dic={}):
         """Ligand scientific preparation
         :param sci_prepped_lig: Scientifically prepared ligand file
         :returns: This implementation merely returns the value of
         `sci_prepped_lig` in a list
         """
         return super({{cookiecutter.lig_prep_class_name}},
-                     self).ligand_scientific_prep(lig_smi_file, out_lig_file, info_dic=info_dic)
+                     self).ligand_scientific_prep(lig_smi_file, out_lig_file, targ_info_dic=targ_info_dic)
 
 
 

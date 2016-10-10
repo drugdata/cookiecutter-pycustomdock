@@ -13,47 +13,82 @@ class {{cookiecutter.dock_class_name}}(Dock):
     Dock.SCI_PREPPED_PROT_SUFFIX = '_prepared.pdb'
 
 
-    def lig_technical_prep(self, sci_prepped_lig):
-        """Technical preparation" is the step immediate preceding
-        docking. During this step, you should perform any file
+    def lig_technical_prep(self, sci_prepped_lig, targ_info_dict = {}):
+        """
+        'Technical preparation' is the step immediate preceding
+        docking. During this step, you may perform any file
         conversions or processing that are specific to your docking
-        program.
+        program. Implementation of this function is optional.
         :param sci_prepped_lig: Scientifically prepared ligand file
-        :returns: This implementation merely returns the value of
-        `sci_prepped_lig` in a list
+        :param targ_info_dict: A dictionary of information about this target and the candidates chosen for docking.
+        :returns: A list of result files to be copied into the
+        subsequent docking folder. The base implementation merely
+        returns the input string in a list (ie. [sci_prepped_lig]) 
         """
         return super({{cookiecutter.dock_class_name}},
-                     self).lig_technical_prep(sci_prepped_lig)
+                     self).lig_technical_prep(sci_prepped_lig,
+                                              targ_info_dict = targ_info_dict)
 
-    def receptor_technical_prep(self, sci_prepped_receptor, pocket_center):
-        """Technical preparation" is the step immediately preceding
-        docking. During this step, you should perform any file
+    def receptor_technical_prep(self, sci_prepped_receptor, pocket_center, targ_info_dict = {}):
+        """
+        'Technical preparation' is the step immediately preceding
+        docking. During this step, you may perform any file
         conversions or processing that are specific to your docking
-        program.
+        program. Implementation of this function is optional.
+        :param sci_prepped_receptor: Scientifically prepared receptor file
+        :param targ_info_dict: A dictionary of information about this target and the candidates chosen for docking.
+        :returns: A list of result files to be copied into the
+        subsequent docking folder. This implementation merely
+        returns the input string in a list (ie [sci_prepped_receptor])
         """
 
-        # Finally, we return the filenames that will be needed in the
-        # docking step. This list is passed to the dock() function as the
-        # tech_prepped_receptor_list argument. Here we pass the docking
-        # box file (for the docking) and the original scientifically
-        # prepped ligand pdb, as that's the easiest way to return the
-        # final receptor conformation.
+   
         return super({{cookiecutter.dock_class_name}},
-                     self).receptor_technical_prep(sci_prepped_receptor, pocket_center)
+                     self).receptor_technical_prep(sci_prepped_receptor, 
+                                                   pocket_center,
+                                                   targ_info_dict=targ_info_dict)
 
-    def dock(self, tech_prepped_lig_list, tech_prepped_receptor_list, output_receptor_pdb, output_lig_mol):
-        """# The dock step needs to run the actual docking algorithm. Its first two
-        # arguments are the return values from the technical preparation
-        # functions for the ligand and receptor. The outputs from this
-        # step must be two files - a pdb with the filename specified in
-        # the output_receptor_pdb argument, and a mol with the filename
-        # specified in the output_ligand_mol argument.
-        :returns: Always returns False
+
+
+
+    def dock(self, 
+             tech_prepped_lig_list, 
+             tech_prepped_receptor_list, 
+             output_receptor_pdb, 
+             output_lig_mol, 
+             targ_info_dict={}):
         """
-        return super({{cookiecutter.dock_class_name}},
+        This function is the only one which the contestant MUST
+        implement.  The dock() step runs the actual docking
+        algorithm. Its first two arguments are the return values from
+        the technical preparation functions for the ligand and
+        receptor. These arguments are lists of file names (strings),
+        which can be assumed to be in the current directory. 
+        If prepare_ligand() and ligand_technical_prep() are not
+        implemented by the contestant, tech_prepped_lig_list will
+        contain a single string which names a SMILES file in the
+        current directory.
+        If prepare_protein() and receptor_technical_prep() are not
+        implemented by the contestant, tech_prepped_receptor_list will
+        contain a single string which names a PDB file in the current
+        directory.
+        The outputs from this step must be two files - a pdb with the
+        filename specified in the output_receptor_pdb argument, and a
+        mol with the filename specified in the output_ligand_mol
+        argument.
+        :param tech_prepped_lig_list: The list of file names resturned by ligand_technical_prep. These have been copied into the current directory.
+        :param tech_prepped_receptor_list: The list of file names resturned by receptor_technical_prep. These have been copied into the current directory.
+        :param output_receptor_pdb: The final receptor (after docking) must be converted to pdb format and have exactly this file name.
+        :param output_lig mol: The final ligand (after docking) must be converted to mol format and have exactly this file name.
+        :param targ_info_dict: A dictionary of information about this target and the candidates chosen for docking.
+        :returns: True if docking is successful, False otherwise. Unless overwritten, this implementation always returns False
+        """
+        return super({{cookiecutter.dock_class_name}}, 
                      self).dock(tech_prepped_lig_list,
                                 tech_prepped_receptor_list,
-                                output_receptor_pdb, output_lig_mol)
+                                output_receptor_pdb, 
+                                output_lig_mol,
+                                targ_info_dict=targ_info_dict)
 
 
 if ("__main__") == (__name__):

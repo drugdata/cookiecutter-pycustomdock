@@ -21,8 +21,16 @@ Usage
 Installation
 ------------
 
+   python setup.py build
+   python setup.py bdist_wheel
+
 Requirements
 ^^^^^^^^^^^^
+* pip
+
+* wheel
+
+* D3R https://github.com/drugdata/D3R
 
 Compatibility
 -------------

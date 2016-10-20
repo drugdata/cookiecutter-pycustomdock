@@ -13,10 +13,14 @@ class {{cookiecutter.lig_prep_class_name}}(LigandPrep):
                                lig_smi_file, 
                                out_lig_file, 
                                targ_info_dic={}):
-        """Ligand scientific preparation
-        :param sci_prepped_lig: Scientifically prepared ligand file
-        :returns: This implementation merely returns the value of
-        `sci_prepped_lig` in a list
+        """
+        Ligand 'scientific preparation' is the process of generating a
+        dockable representation of the target ligand from its SMILES
+        string.
+        :param lig_smi_file: File containing SMILES for target ligand.  
+        :param out_lig_file: The result of preparation should have this file name.  
+        :param targ_info_dict: A dictionary of information about this target and the candidates chosen for docking.  
+        :returns: True if preparation was successful. False otherwise.
         """
         return super({{cookiecutter.lig_prep_class_name}},
                      self).ligand_scientific_prep(lig_smi_file, 

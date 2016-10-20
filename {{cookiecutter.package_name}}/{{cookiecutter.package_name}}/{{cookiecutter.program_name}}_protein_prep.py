@@ -15,7 +15,15 @@ class {{cookiecutter.prot_prep_class_name}}(ProteinPrep):
                         protein_file, 
                         prepared_protein_file, 
                         targ_info_dic={}):
-        
+        """
+        Protein 'scientific preparation' is the process of generating
+        a dockable representation of the candidate protein from a
+        single-chain PDB file.
+        :param protein_file: PDB file containing candidate protein.  
+        :param prepared_protein_file: The result of preparation should have this file name.  
+        :param targ_info_dict: A dictionary of information about this target and the candidates chosen for docking.  
+        :returns: True if preparation was successful. False otherwise.
+        """
         return super({{cookiecutter.prot_prep_class_name}},
                      self).prepare_protein(protein_file, 
                                            prepared_protein_file, 

@@ -11,10 +11,10 @@ class {{cookiecutter.prot_prep_class_name}}(ProteinPrep):
     for CELPP
     """
     ProteinPrep.OUTPUT_PROT_SUFFIX = '.pdb'
-    def prepare_protein(self, 
-                        protein_file, 
-                        prepared_protein_file, 
-                        targ_info_dic={}):
+    def receptor_scientific_prep(self, 
+                                 protein_file, 
+                                 prepared_protein_file, 
+                                 targ_info_dic={}):
         """
         Protein 'scientific preparation' is the process of generating
         a dockable representation of the candidate protein from a

@@ -68,7 +68,7 @@ class {{cookiecutter.dock_class_name}}(Dock):
         implemented by the contestant, tech_prepped_lig_list will
         contain a single string which names a SMILES file in the
         current directory.
-        If prepare_protein() and receptor_technical_prep() are not
+        If receptor_scientific_prep() and receptor_technical_prep() are not
         implemented by the contestant, tech_prepped_receptor_list will
         contain a single string which names a PDB file in the current
         directory.

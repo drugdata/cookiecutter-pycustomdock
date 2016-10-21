@@ -4,7 +4,6 @@ rm -r 2-protein_prep
 rm -r 3-ligand_prep
 rm -r 4-docking
 rm -r 5-pack_docking_results
-rm -r 6-evaluate_docking_results
 
 
 
@@ -24,5 +23,3 @@ python ../{{cookiecutter.package_name}}/{{cookiecutter.program_name}}_dock.py --
 mkdir 5-pack_docking_results
 packdockingresults.py --dockdir 4-docking --packdir 5-pack_docking_results
 
-mkdir 6-evaluate_docking_results
-evaluate.py --dockdir 5-pack_docking_results --outdir 6-evaluate_docking_results --pdbdb mini_pdb

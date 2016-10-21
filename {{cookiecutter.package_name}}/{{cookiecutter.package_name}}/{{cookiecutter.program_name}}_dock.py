@@ -29,13 +29,17 @@ class {{cookiecutter.dock_class_name}}(Dock):
                      self).lig_technical_prep(sci_prepped_lig,
                                               targ_info_dict = targ_info_dict)
 
-    def receptor_technical_prep(self, sci_prepped_receptor, pocket_center, targ_info_dict = {}):
+    def receptor_technical_prep(self, 
+                                sci_prepped_receptor, 
+                                pocket_center, 
+                                targ_info_dict = {}):
         """
         'Technical preparation' is the step immediately preceding
         docking. During this step, you may perform any file
         conversions or processing that are specific to your docking
         program. Implementation of this function is optional.
         :param sci_prepped_receptor: Scientifically prepared receptor file
+        :param pocket_center: Scientifically prepared receptor file
         :param targ_info_dict: A dictionary of information about this target and the candidates chosen for docking.
         :returns: A list of result files to be copied into the
         subsequent docking folder. This implementation merely

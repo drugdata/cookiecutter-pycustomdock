@@ -25,9 +25,9 @@ class {{cookiecutter.prot_prep_class_name}}(ProteinPrep):
         :returns: True if preparation was successful. False otherwise.
         """
         return super({{cookiecutter.prot_prep_class_name}},
-                     self).prepare_protein(protein_file, 
-                                           prepared_protein_file, 
-                                           targ_info_dic=targ_info_dic)
+                     self).receptor_scientific_prep(protein_file, 
+                                                    prepared_protein_file, 
+                                                    targ_info_dic=targ_info_dic)
     
 
 

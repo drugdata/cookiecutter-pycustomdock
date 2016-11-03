@@ -13,7 +13,7 @@ class {{cookiecutter.dock_class_name}}(Dock):
     Dock.SCI_PREPPED_PROT_SUFFIX = '_prepared.pdb'
 
 
-    def lig_tech_prep(self, sci_prepped_lig, targ_info_dict = {}):
+    def ligand_technical_prep(self, sci_prepped_lig, targ_info_dict = {}):
         """
         'Technical preparation' is the step immediate preceding
         docking. During this step, you may perform any file

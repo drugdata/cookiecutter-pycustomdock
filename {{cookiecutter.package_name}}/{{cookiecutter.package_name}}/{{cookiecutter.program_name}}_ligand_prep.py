@@ -12,7 +12,7 @@ class {{cookiecutter.lig_prep_class_name}}(LigandPrep):
     def ligand_scientific_prep(self, 
                                lig_smi_file, 
                                out_lig_file, 
-                               targ_info_dic={}):
+                               targ_info_dict={}):
         """
         Ligand 'scientific preparation' is the process of generating a
         dockable representation of the target ligand from its SMILES
@@ -25,7 +25,7 @@ class {{cookiecutter.lig_prep_class_name}}(LigandPrep):
         return super({{cookiecutter.lig_prep_class_name}},
                      self).ligand_scientific_prep(lig_smi_file, 
                                                   out_lig_file, 
-                                                  targ_info_dic=targ_info_dic)
+                                                  targ_info_dict=targ_info_dict)
 
 
 

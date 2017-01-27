@@ -27,7 +27,7 @@ class {{cookiecutter.prot_prep_class_name}}(ProteinPrep):
         return super({{cookiecutter.prot_prep_class_name}},
                      self).receptor_scientific_prep(protein_file, 
                                                     prepared_protein_file, 
-                                                    targ_info_dic=targ_info_dic)
+                                                    targ_info_dict=targ_info_dict)
     
 
 

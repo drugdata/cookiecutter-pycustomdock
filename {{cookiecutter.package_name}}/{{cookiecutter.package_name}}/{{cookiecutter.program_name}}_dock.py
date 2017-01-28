@@ -26,8 +26,8 @@ class {{cookiecutter.dock_class_name}}(Dock):
         returns the input string in a list (ie. [sci_prepped_lig]) 
         """
         return super({{cookiecutter.dock_class_name}},
-                     self).lig_tech_prep(sci_prepped_lig,
-                                         targ_info_dict = targ_info_dict)
+                     self).ligand_technical_prep(sci_prepped_lig,
+                                                 targ_info_dict = targ_info_dict)
 
     def receptor_technical_prep(self, 
                                 sci_prepped_receptor, 

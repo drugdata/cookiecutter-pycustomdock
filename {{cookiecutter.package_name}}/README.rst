@@ -36,7 +36,7 @@ Requirements
 Compatibility
 -------------
 
-Licence
+License
 -------
 
 Authors
